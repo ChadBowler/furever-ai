@@ -1,14 +1,9 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
-type ConnectionStatus = {
-  isConnected: boolean
-}
 
-export const getServerSideProps: GetServerSideProps<
-  ConnectionStatus
-> = async () => {
+export const getServerSideProps = async () => {
   try {
     await clientPromise
     // `await clientPromise` will use the default database passed in the MONGODB_URI
@@ -21,19 +16,17 @@ export const getServerSideProps: GetServerSideProps<
     // db.find({}) or any of the MongoDB Node Driver commands
 
     return {
-      props: { isConnected: true },
+      props,
     }
   } catch (e) {
     console.error(e)
     return {
-      props: { isConnected: false },
+      props,
     }
   }
 }
 
-export default function Home({
-  isConnected,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home(InferGetServerSidePropsType) {
   return (
     <div className="container">
       {/* <Head>

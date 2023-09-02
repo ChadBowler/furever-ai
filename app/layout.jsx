@@ -1,14 +1,13 @@
 import Navbar from './components/Navbar'
 import './styles/globals.scss'
-import variables from './variables.module.scss'
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
+export const metadata = {
   title:  "Furever AI",
   description: 'Where pets and people belong together.',
   icons: {
@@ -16,11 +15,7 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
