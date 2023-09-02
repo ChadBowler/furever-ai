@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin anchorStyles(){
+        color: $primary-light;
+        &:visited {
+          color: $secondary-light;
+        }
+        &:hover {
+          color: $heart-color;   
+        }
+        &:active {
+          color: $border-light;
+        }
+   
+}

@@ -1,0 +1,29 @@
+$primary-light: #ffffff;
+$secondary-light: #a0dede;
+$action-light: #476561;
+$border-light: #191919;
+$light-gray: #d5d5d6;
+
+
+$primary-dark: #011e11;
+$secondary-dark: #154b1f;
+$action-dark: #ae6538;
+$border-dark: #476561;
+
+
+$heart-color: #d52f27;
+
+//spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+//borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+//box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+//font sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
