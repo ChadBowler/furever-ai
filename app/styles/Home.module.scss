@@ -1,13 +1,96 @@
+@import 'variables';
+@import 'mixins';
+
+%textBox {
+  background-color: $primary-light;
+  opacity: 0.8;
+  padding: $base-padding;
+  font-size: $font-size-xxl;
+  text-align: center;
+  font-family: $light-font;
+}
+
+
 .button{
-    color:white;
-    border-radius: 20px;
-    outline:none;
-    border: none;
-    background-color:#0070f3 ;
-    height: 35px;
-    &:hover{
-      background-color: red;
-      cursor: pointer;
-    }
+  color:white;
+  border-radius: 5px;
+  font-size: $font-size-lg;
+  padding: $base-padding * 3;
+  margin: $base-margin * 1.4;
+  border: none;
+  box-shadow: $base-box-shadow;
+  background-color:$action-light ;
+  &:hover{
+    background-color: $secondary-light;
+    color: black;
+    cursor: pointer;
+  }
   
+  }
+
+  .mainDiv{
+    height: 100%;
+    width: 100%;
+    background-color: $primary-light;
+  }
+
+  .hero {
+    height: 100%;
+    width: 100%;
+    background-color: $primary-light;
+    background-image: url('/images/dog-licking-face.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .box {
+      position: absolute;
+      bottom: 3%;
+      right: 3%;
+      height: 70%;
+      width: 40%;
+
+
+      .introTitle{
+        @extend %textBox;
+      }
+      .introParagraph {
+        @extend %textBox;
+        padding: $base-padding * 2.5;
+        padding-top: $base-padding * 5.5;
+        padding-bottom: $base-padding * 5.5;
+        width: 70%;
+        margin-top: -4%;
+        margin-left: auto;
+        font-size: $font-size-xl;
+        margin-right: auto;
+      }
+
+      .buttonBox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: $base-margin * (-5.5);
+        z-index: 1;
+      }
+    }
+  }
+
+  .aboutUs {
+    height: 50%;
+    width: 90%;
+    text-align: center;
+
+    h2 {
+      font-family: $light-font;
+      font-size: $font-size-xxl;
+    }
+  }
+
+  .misison {
+
+  }
+
+  .animalCommitment {
+
   }

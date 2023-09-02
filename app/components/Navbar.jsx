@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './styles/Navbar.module.scss'
 
-const lightImages = ['/images/dog-paw-black.png', '/images/paws-black.png', '/images/user-black.png', '/images/up-arrow-light.png']
+const lightIcons = ['/images/icons/dog-paw-black.png', '/images/icons/paws-black.png', '/images/icons/user-black.png', '/images/icons/up-arrow-light.png']
 
 export default function Navbar() {
    
@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className={`light-text, ${styles.container}`} style={{justifyContent: 'flex-start'}}>
             <Link href={'#'}>
                 <Image 
-                    src={lightImages[2]}
+                    src={lightIcons[2]}
                     width={100}
                     height={100}
                     alt={'user icon'}                
@@ -24,7 +24,7 @@ export default function Navbar() {
         </div>
         <div className={`light-text, ${styles.container}`}>
             <Image
-                src={lightImages[0]}
+                src={lightIcons[0]}
                 width={100}
                 height={100}
                 alt={'paw icon'}   

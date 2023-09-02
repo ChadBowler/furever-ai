@@ -11,7 +11,7 @@ export const metadata = {
   title:  "Furever AI",
   description: 'Where pets and people belong together.',
   icons: {
-    icon: '/images/dog-paw-white.png'
+    icon: '/images/icons/dog-paw-white.png'
   }
 }
 
@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
       <body className="">
         <Navbar />
         <main className="">
-            <h1>Hello There!</h1>
           {children}
         </main>
       </body>
