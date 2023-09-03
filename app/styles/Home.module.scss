@@ -10,6 +10,32 @@
   font-family: $light-font;
 }
 
+%sections {
+  height: 50%;
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+
+%section-titles {
+  font-family: $light-font;
+  font-size: $font-size-xxl;
+}
+
+%section-text {
+  width: 50%;
+  font-family: $light-font;
+  font-size: $font-size-lg;
+  background-color: $secondary-light;
+  margin-bottom: auto;
+  margin-left: $base-margin *4;
+  padding: $base-padding * 2;
+}
+
+.missionSection {
+  background-color: red;
+}
+
 
 .button{
   color:white;
@@ -77,20 +103,82 @@
   }
 
   .aboutUs {
-    height: 50%;
-    width: 90%;
-    text-align: center;
-
+    @extend %sections;
+    
     h2 {
-      font-family: $light-font;
-      font-size: $font-size-xxl;
+      @extend %section-titles;
+    }
+    .aboutUsContent {
+      display: flex;
+      position: relative;
+      width: 90%;
+      margin: auto;
+      padding-left: $base-padding * 10;
+
+      .pawsIcon {
+        position: absolute;
+        top: 0;
+        left: 45%;
+      }
+
+      .pictureContainer {
+        width: 50%;
+        position: relative;
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .pictureBackground {
+          width: 500px;
+          height: 565px;
+          background-color: $secondary-light;
+          position: absolute;
+          z-index: -1;
+          transform: rotate(-25deg);
+        }
+      }
+      .aboutUsText {
+        @extend %section-text;
+        // width: 50%;
+        // font-family: $light-font;
+        // font-size: $font-size-lg;
+        // background-color: $secondary-light;
+        // margin-bottom: auto;
+        // margin-left: $base-margin *4;
+        // padding: $base-padding * 2;
+      }
     }
   }
 
   .misison {
+    position: relative;
+    @extend %sections;
+    h2 {
+      @extend %section-titles;
+    }
+    .pictureContainer{
+      width: 50%;
+      position: absolute;
+      right: -10%;
+      top: -15%;
 
+      .pictureBackground{
+        position: absolute;
+        height: 100%;
+        width: 38%;
+        top: -10%;
+        left: 26%;
+        background-color: $border-light;
+        z-index: -1;
+      }
+    }
+    .missionText {
+      @extend %section-text;
+    }
   }
 
   .animalCommitment {
-
+    @extend %sections;
+    h2 {
+      @extend %section-titles;
+    }
   }

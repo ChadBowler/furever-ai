@@ -1,5 +1,6 @@
-@import 'variables';
-@import 'mixins';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=DM+Sans:opsz@9..40&family=Raleway:wght@300;700&family=Vollkorn+SC:wght@900&display=swap');
 
 html,
@@ -10,7 +11,4 @@ main {
     height: 100%  
 }
 
-.light-text {
-    font-family: 'Raleway', sans-serif;
-}
 
