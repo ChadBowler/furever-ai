@@ -1,0 +1,27 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+
+.signInIcon {
+    background-image: url('/images/icons/user-black.png');
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    @include lg {
+        height: 100px;
+        width: 100px;
+    }
+}
+.dogPawIcon {
+    background-image: url('/images/icons/dog-paw-black.png');
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: $base-padding * 2;
+    margin-right: $base-margin ;
+    @include lg {
+        height: 100px;
+        width: 100px;
+    }
+}

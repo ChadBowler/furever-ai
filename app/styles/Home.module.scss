@@ -2,53 +2,36 @@
 @import 'mixins';
 
 %textBox {
-  background-color: $primary-light;
-  opacity: 0.8;
-  padding: $base-padding;
-  font-size: $font-size-xxl;
-  text-align: center;
-  font-family: $light-font;
+  padding: $base-padding * 2;
+  
 }
 
 %sections {
-  height: 50%;
   width: 90%;
   text-align: center;
   margin: auto;
 }
 
-%section-titles {
-  font-family: $light-font;
-  font-size: $font-size-xxl;
-}
 
 %section-text {
   width: 50%;
-  font-family: $light-font;
   font-size: $font-size-lg;
-  background-color: $secondary-light;
   margin-bottom: auto;
   margin-left: $base-margin *4;
   padding: $base-padding * 2;
 }
 
-.missionSection {
-  background-color: red;
-}
-
 
 .button{
-  color:white;
+  
   border-radius: 5px;
   font-size: $font-size-lg;
+  font-weight: 900;
   padding: $base-padding * 3;
   margin: $base-margin * 1.4;
   border: none;
   box-shadow: $base-box-shadow;
-  background-color:$action-light ;
   &:hover{
-    background-color: $secondary-light;
-    color: black;
     cursor: pointer;
   }
   
@@ -66,19 +49,43 @@
     background-color: $primary-light;
     background-image: url('/images/dog-licking-face.jpg');
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100dvw * 6;
     position: relative;
+    @include xs {
+      background-size: 100dvw * 5;
+    }
+    @include sm {
+      background-size: 100dvw * 4;
+    }
+    @include md {
+      background-size: 100dvw * 3;
+    }
+    @include lg {
+      background-size: cover;
+    }
 
     .box {
-      position: absolute;
-      bottom: 3%;
-      right: 3%;
-      height: 70%;
-      width: 40%;
-
-
+      padding-top: $base-padding * 2;
+      @include lg {
+        position: absolute;
+        bottom: 15%;
+        right: 3%;
+        max-height: 70%;
+        max-width: 60%;
+        min-width: 40%;
+        // border: 10px solid black
+      }
+      
       .introTitle{
         @extend %textBox;
+        margin-bottom: $base-margin * 6;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        @include lg {
+          margin-bottom: auto;
+        }
       }
       .introParagraph {
         @extend %textBox;
@@ -88,32 +95,42 @@
         width: 70%;
         margin-top: -4%;
         margin-left: auto;
-        font-size: $font-size-xl;
+        font-size: $base-font-size;
         margin-right: auto;
+        @include sm {
+          font-size: $font-size-lg;
+        }
+        @include xxl {
+          font-size: $font-size-xl;
+        }
       }
 
       .buttonBox {
-        position: relative;
+        position: absolute;
         display: flex;
         justify-content: center;
-        margin-top: $base-margin * (-5.5);
+        left: 0;
+        right: 0;
+        margin: auto;
+        // margin-top: $base-margin * (-1.5);
         z-index: 1;
+        @include lg {
+          bottom: $base-padding * (-4.7);
+        }
       }
     }
   }
 
   .aboutUs {
     @extend %sections;
-    
-    h2 {
-      @extend %section-titles;
-    }
+  
     .aboutUsContent {
       display: flex;
       position: relative;
-      width: 90%;
+      width: 100%;
       margin: auto;
       padding-left: $base-padding * 10;
+      justify-content: space-between;
 
       .pawsIcon {
         position: absolute;
@@ -122,29 +139,29 @@
       }
 
       .pictureContainer {
-        width: 50%;
+        width: 40%;
         position: relative;
         display: flex;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        // margin-top: 20px;
+        // margin-bottom: 20px;
+        // padding: $base-padding * 5;
         .pictureBackground {
-          width: 500px;
-          height: 565px;
-          background-color: $secondary-light;
+          width: 90%;
+          height: 90%;
           position: absolute;
-          z-index: -1;
           transform: rotate(-25deg);
+          margin: auto;
+          }
+          .dogPicture {
+            width: 90%;
+            height: 90%;
+            z-index: 1;
         }
       }
       .aboutUsText {
+        // width: 40%;
         @extend %section-text;
-        // width: 50%;
-        // font-family: $light-font;
-        // font-size: $font-size-lg;
-        // background-color: $secondary-light;
-        // margin-bottom: auto;
-        // margin-left: $base-margin *4;
-        // padding: $base-padding * 2;
+       
       }
     }
   }
@@ -152,9 +169,7 @@
   .misison {
     position: relative;
     @extend %sections;
-    h2 {
-      @extend %section-titles;
-    }
+ 
     .pictureContainer{
       width: 50%;
       position: absolute;
@@ -178,7 +193,7 @@
 
   .animalCommitment {
     @extend %sections;
-    h2 {
-      @extend %section-titles;
+    .commitment {
+      @extend %section-text;
     }
   }
