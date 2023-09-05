@@ -1,19 +1,47 @@
 import './styles/globals.scss'
 import styles from './styles/Home.module.scss'
 import Image from 'next/image'
+import run from '../lib/mongodb'
+import Link from 'next/link'
+import { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
 const twoDogsImage = '/images/two-dogs-1k-width.jpg'
 const pawsIcon = '/images/icons/paws-black.png'
 const catImage = '/images/cat-on-blanket.jpg'
 const turtleImage = '/images/turtle-in-grass.jpg'
+const personalityProfile = '/personality-profile'
 
 const sectionHeignt = {
   'height': '50%'
 }
 
+export const getServerSideProps = async () => {
+    try {
+      await run
+      // `await clientPromise` will use the default database passed in the MONGODB_URI
+      // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
+      //
+      // `const client = await clientPromise`
+      // `const db = client.db("myDatabase")`
+      //
+      // Then you can execute queries against your database like so:
+      // db.find({}) or any of the MongoDB Node Driver commands
+  
+      return {
+        props,
+      }
+    } catch (e) {
+      console.log('ERROR HERE!!!');
+      console.error(e)
+      return {
+        props,
+      }
+    }
+  }
+
 // export const revalidate = 86400
 
-export default function Home() {
+export default function Home(InferGetServerSidePropsType) {
   return (
     <div className={styles.mainDiv}>
       <section className={styles.hero}>
@@ -26,7 +54,10 @@ export default function Home() {
               <p>Find the perfect pet for your lifestyle with our AI-powered matching system. Tell us a little about you, and we'll help you find a furry friend that you'll love for life.</p>
             </div>
             <div className={styles.buttonBox}>
-              <button className='dark:bg-action-dark bg-action-light p-5 text-lg xl:text-2xl m-4 rounded-lg dark:font-dark-font-primary dark:hover:bg-primary-dark dark:hover:text-action-dark hover:bg-secondary-light hover:text-black text-white'>Tell Us About You</button>
+              <Link href={personalityProfile}>
+                <button className='dark:bg-action-dark bg-action-light p-5 text-lg xl:text-2xl m-4 rounded-lg dark:font-dark-font-primary dark:hover:bg-primary-dark dark:hover:text-action-dark hover:bg-secondary-light hover:text-black text-white'>Tell Us About You</button>
+              </Link>
+              
               <button className='dark:bg-action-dark bg-action-light p-5 text-lg xl:text-2xl m-4 rounded-lg dark:font-dark-font-primary dark:hover:bg-primary-dark dark:hover:text-action-dark hover:bg-secondary-light hover:text-black text-white'>Search Without AI</button>
             </div>
           
@@ -94,6 +125,15 @@ export default function Home() {
           <p className={`dark:bg-secondary-dark bg-secondary-light dark:text-white text-black ${styles.commitmentText}`}>Furever AI is committed to the highest standards of animal welfare. We work with carefully vetted rescue organizations and shelters to ensure that all of the pets in our database are healthy, happy, and ready for adoption. We also offer a variety of resources to help new pet parents, including training tips, behavior advice, and emergency support.</p>
         </section>
       </div> 
+      
+          {/* {isConnected ? (
+          <h2 className="subtitle">You are connected to MongoDB</h2>
+        ) : (
+          <h2 className="subtitle">
+            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
+            for instructions.
+          </h2>
+        )} */}
     </div>
   )
 }
