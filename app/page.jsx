@@ -3,6 +3,7 @@ import styles from './styles/Home.module.scss'
 import Image from 'next/image'
 import run from '../lib/mongodb'
 import Link from 'next/link'
+import Button from './components/Button'
 import { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
 const twoDogsImage = '/images/two-dogs-1k-width.jpg'
@@ -55,10 +56,11 @@ export default function Home(InferGetServerSidePropsType) {
             </div>
             <div className={styles.buttonBox}>
               <Link href={personalityProfile}>
-                <button className='dark:bg-action-dark bg-action-light p-5 text-lg xl:text-2xl m-4 rounded-lg dark:font-dark-font-primary dark:hover:bg-primary-dark dark:hover:text-action-dark hover:bg-secondary-light hover:text-black text-white'>Tell Us About You</button>
+                <Button buttonName={'Tell Us About You'}></Button>
               </Link>
-              
-              <button className='dark:bg-action-dark bg-action-light p-5 text-lg xl:text-2xl m-4 rounded-lg dark:font-dark-font-primary dark:hover:bg-primary-dark dark:hover:text-action-dark hover:bg-secondary-light hover:text-black text-white'>Search Without AI</button>
+              <Link href='#'>
+                <Button buttonName={'Search Without AI'}></Button>
+              </Link>
             </div>
           
         </div>
