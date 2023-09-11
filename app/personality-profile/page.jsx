@@ -1,8 +1,8 @@
 // pages/PetQuestionnaire.js
 'use client';
 import { useState } from 'react';
-// import useSWR from 'swr';
 import questions from '../api/data.json'
+import Button from '../components/Button';
 
 function PetQuestionnaire() {
 
@@ -67,23 +67,13 @@ function PetQuestionnaire() {
             )}
           </div>
         ))}
-        <button type="button" onClick={handleSaveAnswers}>Save Answers</button>
-        <button type="button" onClick={handleSubmitAnswers}>Submit Answers</button>
+        <Button onClick={handleSaveAnswers} buttonName={'Save Answers'}></Button>
+        <Button onClick={handleSubmitAnswers} buttonName={'Submit Answers'}></Button>
+        {/* <button type="button" onClick={handleSaveAnswers}>Save Answers</button>
+        <button type="button" onClick={handleSubmitAnswers}>Submit Answers</button> */}
       </form>
     </div>
   );
 }
-// Fetching data from the JSON file
-// import fsPromises from "fs/promises";
-// import path from 'path'
-// export async function getStaticProps() {
-//   const filePath = path.join(process.cwd(), 'data.json');
-//   const jsonData = await fsPromises.readFile(filePath);
-//   const objectData = JSON.parse(jsonData);
-
-//   return {
-//     props: objectData
-//   }
-// }
 
 export default PetQuestionnaire;

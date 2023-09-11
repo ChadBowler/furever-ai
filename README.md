@@ -1,82 +1,47 @@
-## Example app using MongoDB
+# Furever AI - Find Your Perfect Pet Companion
 
-[MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
+🐶 🐤 🦎 🐱 🐍 🐰 🐢
 
-If you want to learn more about MongoDB, visit the following pages:
+Welcome to Furever AI, your go-to platform for finding the perfect pet that matches your lifestyle! We are currently in development and working hard to bring you a seamless experience to connect with adoptable pets.
 
-- [MongoDB Atlas](https://mongodb.com/atlas)
-- [MongoDB Documentation](https://docs.mongodb.com/)
+## Table of Contents
 
-## Deploy your own
+- [About Furever AI](#about-furever-ai)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Development](#development)
+- [License](#license)
 
-Once you have access to the environment variables you'll need, deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## About Furever AI
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?project-name=with-mongodb&repository-name=with-mongodb&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-mongodb&integration-ids=oac_jnzmjqM10gllKmSrG0SGrHOH)
+Furever AI is an innovative website that utilizes the power of the OpenAI API to help people find their ideal pet companions. Whether you're looking for a playful pup, a cuddly cat, or any other furry, feathered, or scaly friend, Furever AI is here to assist you in making the perfect match.
 
-## How to use
+Our mission is to connect you with adoptable pets that match your lifestyle, preferences, and needs. We believe that every pet deserves a loving home, and every person deserves a pet that fits seamlessly into their life.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Features
 
-```bash
-npx create-next-app --example with-mongodb with-mongodb-app
-```
+- **Pet Matching**: Our intelligent algorithm uses the OpenAI API to analyze your preferences and lifestyle to suggest pets that are the perfect fit for you.
 
-```bash
-yarn create next-app --example with-mongodb with-mongodb-app
-```
+- **Pet Profiles**: Get detailed information about adoptable pets, including their breed, age, temperament, and more.
 
-```bash
-pnpm create next-app --example with-mongodb with-mongodb-app
-```
+- **Search Filters**: Easily filter pets based on criteria such as size, age, and location.
 
-## Configuration
+- **Adoption Resources**: Access valuable resources and information on pet adoption, care, and training.
 
-### Set up a MongoDB database
+- **User Profiles**: Create your profile to save your preferences, track your favorite pets, and more.
 
-Set up a MongoDB database either locally or with [MongoDB Atlas for free](https://mongodb.com/atlas).
+## Getting Started
 
-### Set up environment variables
+As we are currently in development, Furever AI is not yet available for public use. We are actively working on bringing this service to you soon. Stay tuned for updates!
 
-Copy the `env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+## Development
 
-```bash
-cp .env.local.example .env.local
-```
+This project is currently under development. Check back later for more features.
 
-Set each variable on `.env.local`:
+## License
 
-- `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster.
+Furever AI is currently closed-source and proprietary software. Please refer to our [License](LICENSE.md) for more information regarding its usage and distribution.
 
-### Run Next.js in development mode
+---
 
-```bash
-npm install
-npm run dev
-
-# or
-
-yarn install
-yarn dev
-```
-
-Your app should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
-
-You will either see a message stating "You are connected to MongoDB" or "You are NOT connected to MongoDB". Ensure that you have provided the correct `MONGODB_URI` environment variable.
-
-When you are successfully connected, you can refer to the [MongoDB Node.js Driver docs](https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/) for further instructions on how to query your database.
-
-## Deploy on Vercel
-
-You can deploy this app to the cloud with [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-#### Deploy Your Local Project
-
-To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example).
-
-**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to match your `.env.local` file.
-
-#### Deploy from Our Template
-
-Alternatively, you can deploy using our template by clicking on the Deploy button below.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?project-name=with-mongodb&repository-name=with-mongodb&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-mongodb&integration-ids=oac_jnzmjqM10gllKmSrG0SGrHOH)
+Thank you for your interest in Furever AI! We can't wait to help you find your perfect pet companion.
