@@ -26,7 +26,7 @@ export default function Navbar() {
                 </div>
         </div>
         <div className='xs:block lg:hidden'>
-            <Link href='#'>
+            <a href='#'>
                 <Image
                 src={navIcon}
                 width={40}
@@ -34,13 +34,13 @@ export default function Navbar() {
                 alt={'user icon'}
                 >
                 </Image>
-            </Link>
+            </a>
         </div>
         <div className='text-black dark:text-white flex-row items-center gap-3 lg:text-xl xl:text-3xl hidden lg:flex'>
-            <Link href='#' className='dark:hover:text-black hover:text-white'>Home</Link><span> | </span>
-            <Link href='#' className='dark:hover:text-black hover:text-white'>About</Link><span> | </span>
-            <Link href='#' className='dark:hover:text-black hover:text-white'>Pet Care</Link><span> | </span>
-            <Link href='#' className='dark:hover:text-black hover:text-white'>Contact</Link>
+            <a href='/' className='dark:hover:text-black hover:text-white'>Home</a><span> | </span>
+            <a href='/about' className='dark:hover:text-black hover:text-white'>About</a><span> | </span>
+            <a href='/pet-care' className='dark:hover:text-black hover:text-white'>Pet Care</a><span> | </span>
+            <a href='/contact' className='dark:hover:text-black hover:text-white'>Contact</a>
         </div>
     </nav>
   )
