@@ -1,0 +1,74 @@
+@import '../styles/variables';
+.questionnaireContainer {
+    text-align: start;
+    padding: $base-padding;
+    display: flex;
+    
+    background-color: $primary-dark;
+  }
+  
+  .questionnaireHeader {
+    font-size: $font-size-2xl;
+    color: $primary-light;
+    margin-bottom: $base-margin;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: $base-margin * 9;
+  }
+  .question {
+    width: 100%;
+    border-bottom: 5px solid $action-dark;
+  }
+  
+  .label {
+    font-size: $font-size-lg;
+    color: $primary-light;
+  }
+  
+  .selectInput {
+    width: 90%;
+    padding: $base-padding;
+    margin: $base-margin;
+    border: $base-border-thickness solid $border-light;
+    border-radius: $base-border-radius;
+    font-size: $base-font-size;
+  }
+  
+  .textareaInput {
+    width: 90%;
+    padding: $base-padding;
+    margin: $base-margin;
+    border: $base-border-thickness solid $border-light;
+    border-radius: $base-border-radius;
+    font-size: $base-font-size;
+    height: 150px;
+  }
+  
+  .radioGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: $base-margin;
+    margin-left: $base-margin * 5;
+  
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+  
+    label {
+      font-size: $font-size-lg;
+      color: $primary-light;
+    }
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: $base-margin;
+  }
+  

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import questions from '../api/data.json';
 import Button from '../components/Button';
+import styles from './PersonalityProfile.module.scss';
 
 const timeOptions = [
   '0 hours',
@@ -46,40 +47,45 @@ function PetQuestionnaire() {
   };
 
   return (
-    <div>
-      <h1>Pet Adoption Questionnaire</h1>
-      <form>
-        {questions.map((q) => (
-          <div key={q.question} className="question">
-            <label htmlFor={q.question}>{q.question}</label>
-            <br />
-            {q.question === 'How much time do you have to spend with a pet each day?' ? (
-              <select name={q.question} onChange={handleInputChange} required>
-                {timeOptions.map((option) => (
+    <div className={styles.questionnaireContainer}>
+    <h1 className={styles.questionnaireHeader}>Personality Profile</h1>
+    <form className={styles.form}>
+      {questions.map((q) => (
+        <div key={q.question} className={`${styles.question} question`}>
+          <label className={styles.label} htmlFor={q.question}>
+            {q.question}
+          </label>
+          <br />
+          {/* Apply the appropriate styles to your form elements */}
+          {q.question === 'How much time do you have to spend with a pet each day?' ? (
+            <select className={styles.selectInput} name={q.question} onChange={handleInputChange} required>
+             {timeOptions.map((option) => (
                   <option key={option} value={option}>
                     {option}
                   </option>
                 ))}
-              </select>
-            ) : q.question === 'What type of dwelling do you live in?' ? (
-              <select name={q.question} onChange={handleInputChange} required>
-                {dwellingOptions.map((option) => (
+            </select>
+          ) : q.question === 'What type of dwelling do you live in?' ? (
+            <select className={styles.selectInput} name={q.question} onChange={handleInputChange} required>
+             {dwellingOptions.map((option) => (
                   <option key={option} value={option}>
                     {option}
                   </option>
                 ))}
-              </select>
-            ) : q.type === 'open ended' ? (
-              <textarea
-                id={q.question}
-                name={q.question}
-                rows="4"
-                cols="50"
-                onChange={handleInputChange}
-                required
-              />
-            ) : (
-              <>
+            </select>
+          ) : q.type === 'open ended' ? (
+            <textarea
+              className={styles.textareaInput}
+              id={q.question}
+              name={q.question}
+              rows="4"
+              cols="50"
+              onChange={handleInputChange}
+              required
+            />
+          ) : (
+            <div className={styles.radioGroup}>
+              <div className={styles.radioGroupContainer}>
                 <input
                   type="radio"
                   id={`${q.question}_yes`}
@@ -89,7 +95,9 @@ function PetQuestionnaire() {
                   required
                 />
                 <label htmlFor={`${q.question}_yes`}>Yes</label>
-                <input
+              </div>
+             <div className={styles.radioGroupContainer}>
+              <input
                   type="radio"
                   id={`${q.question}_no`}
                   name={q.question}
@@ -98,14 +106,18 @@ function PetQuestionnaire() {
                   required
                 />
                 <label htmlFor={`${q.question}_no`}>No</label>
-              </>
-            )}
-          </div>
-        ))}
+             </div>
+              
+            </div>
+          )}
+        </div>
+      ))}
+      <div className={styles.buttonContainer}>
         <Button onClick={handleSaveAnswers} buttonName={'Save Answers'} />
         <Button onClick={handleSubmitAnswers} buttonName={'Submit Answers'} />
-      </form>
-    </div>
+      </div>
+    </form>
+  </div>
   );
 }
 
