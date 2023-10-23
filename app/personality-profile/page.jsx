@@ -35,9 +35,26 @@ function PetQuestionnaire() {
     }));
   };
 
-  const handleSaveAnswers = () => {
-    // Code to save answers to user's profile in a user database goes here
-    alert('Answers saved successfully!');
+  const handleSaveAnswers = async () => {
+    try {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(answers),
+      });
+  
+      if (response.ok) {
+        alert('Answers saved successfully!');
+      } else {
+        // Handle the error when the response is not ok
+        alert('Failed to save answers. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error saving answers:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
 
   const handleSubmitAnswers = () => {

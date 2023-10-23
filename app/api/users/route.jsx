@@ -17,3 +17,20 @@ export async function GET() {
        console.error(e);
    }
 };
+export async function POST(req) {
+    try {
+        const client = await run();
+        const db = client.db("fureverDB");
+ 
+        const { body } = req;
+        const collection = db.collection("Users");
+ 
+        // Insert the user's data into the collection
+        const result = await collection.insertOne(body);
+ 
+        return NextResponse.json({ message: "User data added successfully", data: result });
+    } catch (e) {
+        console.error(e);
+        return NextResponse.error({ message: "Failed to add user data" });
+    }
+ };

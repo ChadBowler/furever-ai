@@ -34,7 +34,7 @@
     padding: $base-padding;
     margin: $base-margin;
     border: $base-border-thickness solid $border-light;
-    border-radius: $base-border-radius;
+    border-radius: $base-border-radius / 2;
     font-size: $base-font-size;
   }
   
